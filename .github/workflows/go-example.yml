@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '*/15 * * * 1-6' # Executa a cada 15 minutos de segunda a sábado
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     env:
       FILE_NAME: hello-server
 
